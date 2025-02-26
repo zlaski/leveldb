@@ -25,6 +25,9 @@ namespace {
 
 bool GuessType(const std::string& fname, FileType* type) {
   size_t pos = fname.rfind('/');
+  if (pos == std::string::npos) {
+    pos = fname.rfind('\\');
+  }
   std::string basename;
   if (pos == std::string::npos) {
     basename = fname;

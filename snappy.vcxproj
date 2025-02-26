@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(AKITOOLS)\akibld\akibld.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7E5B4325-AE65-46E9-9C11-B0FE8332F5B6}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClInclude Include="snappy-resources.h" />
+    <ClInclude Include="snappy\snappy-c.h" />
+    <ClInclude Include="snappy\snappy-internal.h" />
+    <ClInclude Include="snappy\snappy-sinksource.h" />
+    <ClInclude Include="snappy\snappy-stubs-internal.h" />
+    <ClInclude Include="snappy\snappy-test.h" />
+    <ClInclude Include="snappy\snappy.h" />
+    <ClInclude Include="snappy\snappy_test_data.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="snappy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="snappy.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="snappy.akibld.bat" />
+    <None Include="snappy\snappy-stubs-public.h.in" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(AKIROOT)\svn\akisystems\akilib\akilib.vcxproj">
+      <Project>{0A19BC1F-D9EA-4438-BA0D-2E42C97FC45D}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="snappy\snappy-c.cc" />
+    <ClCompile Include="snappy\snappy-sinksource.cc" />
+    <ClCompile Include="snappy\snappy-stubs-internal.cc" />
+    <ClCompile Include="snappy\snappy.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

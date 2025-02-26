@@ -1,0 +1,8 @@
+Format of .ldb files
+
+The LAST 48 (0x30) bytes form the footer, which contains:
+   Offset 0: Metadata RVA, Metadata Size, Index RVA, Index Size (all VarInt64)
+   Offset 40: Magic: 15800726617472432983
+   
+The first BYTE PAST (Metadata RVA + Metadata Size) is compression byte (0..2)        (0x35 from end of file)
+The first DWORD PAST (Index RVA + Index Size) is number of restarts

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <SubSystem>Console</SubSystem>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(AKITOOLS)\akibld\akibld.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{886484C7-9C4B-43CC-9735-3D5C501D609F}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClInclude Include="leveldb-util-resources.h" />
+    <ClInclude Include="util\port_config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="leveldb-util.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="leveldb-util.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="leveldb-util.akibld.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(AKIROOT)\svn\akisystems\akilib\akilib.vcxproj">
+      <Project>{0A19BC1F-D9EA-4438-BA0D-2E42C97FC45D}</Project>
+    </ProjectReference>
+    <ProjectReference Include="leveldb.vcxproj">
+      <Project>{90d704af-d080-4490-8f27-a69b3a70ae3d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libzstd.vcxproj">
+      <Project>{2e356944-b30b-4146-b382-0256088df0ca}</Project>
+    </ProjectReference>
+    <ProjectReference Include="snappy.vcxproj">
+      <Project>{7e5b4325-ae65-46e9-9c11-b0fe8332f5b6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="db\leveldbutil.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
